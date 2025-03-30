@@ -41,5 +41,17 @@ export class TweetsService {
     return this.tweetList.find((tweet) => tweet.id === id);
   }
 
+  getUserTweets(username: string): Tweet[] {
+    let userTweets: Tweet[] = [];
+
+    this.tweetList.forEach((tweet) => {
+      if (tweet.username === username) {
+        userTweets.push(tweet);
+      }
+    });
+
+    return userTweets;
+  }
+
   constructor() { }
 }

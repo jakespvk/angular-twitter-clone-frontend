@@ -1,1 +1,6 @@
-<p>profile works!</p>
+<a href="">go back</a>
+<h3>{{ username }}</h3>
+<ng-template ngFor let-tweet [ngForOf]="userTweetList">
+  <hr/>
+  <p>{{ tweet.message }}</p>
+</ng-template>
