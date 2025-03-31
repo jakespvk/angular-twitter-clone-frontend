@@ -30,8 +30,11 @@ export class SearchComponent {
       return;
     }
 
-    this.filteredTweetList = this.tweetList.filter((tweet) =>
-      tweet?.message.toLowerCase().includes(text.toLowerCase()),
-    );
+    // this.filteredTweetList = this.tweetList.filter((tweet) =>
+    //   tweet?.message.toLowerCase().includes(text.toLowerCase()),
+    // );
+    this.tweetsService.getFilteredTweets(text).then((filteredTweetList: Tweet[]) => {
+      this.filteredTweetList = filteredTweetList;
+    });
   }
 }
