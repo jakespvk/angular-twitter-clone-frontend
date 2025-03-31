@@ -1,13 +1,13 @@
 import { Component, inject } from '@angular/core';
-import { TweetComponent } from '../tweet/tweet.component';
 import { NgFor } from '@angular/common';
 import { TweetsService } from '../tweets.service';
 import { Tweet } from '../tweet';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { TweetComponent } from '../tweet/tweet.component';
 
 @Component({
   selector: 'app-profile',
-  imports: [NgFor, TweetComponent],
+  imports: [NgFor, RouterLink, TweetComponent],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })
@@ -19,6 +19,8 @@ export class ProfileComponent {
 
   constructor() {
     this.username = this.route.snapshot.params["username"];
-    this.userTweetList = this.tweetsService.getUserTweets(this.username);
+    this.tweetsService.getUserTweets(this.username).then((userTweetList: Tweet[]) => {
+      this.userTweetList = userTweetList;
+    });
   }
 }

@@ -1,4 +1,8 @@
+<nav>
+  <a [routerLink]="['/post']">post tweet</a>
+  <a [routerLink]="['/search']">search</a>
+</nav>
 <div>
-  <h1>Tweeter</h1>
+  <h1>Birdy</h1>
 </div>
 <app-tweet *ngFor="let tweet of tweetList" [tweet]="tweet"></app-tweet>

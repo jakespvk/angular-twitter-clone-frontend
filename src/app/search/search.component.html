@@ -1,0 +1,5 @@
+<a [routerLink]="['']">go back</a>
+<form (submit)="$event.preventDefault();filterResults(filter.value)">
+  <input type="text" placeholder="find tweet" #filter />
+</form>
+<app-tweet *ngFor="let tweet of filteredTweetList" [tweet]="tweet"></app-tweet>

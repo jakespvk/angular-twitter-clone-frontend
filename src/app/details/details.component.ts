@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { TweetsService } from '../tweets.service';
 import { Tweet } from '../tweet';
 
 @Component({
   selector: 'app-details',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css'
 })
@@ -15,8 +15,10 @@ export class DetailsComponent {
   tweet: Tweet | undefined;
 
   constructor() {
-    const tweetId = Number(this.route.snapshot.params["id"]);
-    this.tweet = this.tweetsService.getTweetById(tweetId);
+    const tweetId = parseInt(this.route.snapshot.params['id'], 10);
+    this.tweetsService.getTweetById(tweetId).then((tweet?: Tweet) => {
+      this.tweet = tweet;
+    });
   }
 
 }

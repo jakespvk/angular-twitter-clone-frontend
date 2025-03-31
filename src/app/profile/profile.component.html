@@ -1,6 +1,6 @@
-<a href="">go back</a>
+<a [routerLink]="['']">go back</a>
 <h3>{{ username }}</h3>
-<ng-template ngFor let-tweet [ngForOf]="userTweetList">
+<app-tweet *ngFor="let tweet of userTweetList" [tweet]="tweet">
   <hr/>
   <p>{{ tweet.message }}</p>
-</ng-template>
+</app-tweet>

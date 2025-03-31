@@ -1,1 +1,12 @@
-<p>post works!</p>
+<a [routerLink]="['']">go back</a>
+<form [formGroup]="postTweetForm" (submit)="$event.preventDefault();postTweet()">
+  <label for="username">Username</label>
+  <input id="username" type="text" formControlName="username" />
+
+  <br/>
+
+  <label for="message">Message</label>
+  <input id="message" type="text" formControlName="message" />
+
+  <button style="background-color:white;" type="submit">Post</button>
+</form>
