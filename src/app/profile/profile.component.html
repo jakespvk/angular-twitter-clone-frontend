@@ -1,6 +1,8 @@
 <a [routerLink]="['']">go back</a>
 <h3>{{ username }}</h3>
-<app-tweet *ngFor="let tweet of userTweetList" [tweet]="tweet">
-  <hr/>
-  <p>{{ tweet.message }}</p>
-</app-tweet>
+@for (tweet of userTweetList; track tweet) {
+  <app-tweet [tweet]="tweet">
+    <hr/>
+    <p>{{ tweet.message }}</p>
+  </app-tweet>
+}

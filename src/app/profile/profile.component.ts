@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { NgFor } from '@angular/common';
+
 import { TweetsService } from '../tweets.service';
 import { Tweet } from '../tweet';
 import { ActivatedRoute, RouterLink } from '@angular/router';
@@ -7,7 +7,7 @@ import { TweetComponent } from '../tweet/tweet.component';
 
 @Component({
   selector: 'app-profile',
-  imports: [NgFor, RouterLink, TweetComponent],
+  imports: [RouterLink, TweetComponent],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })

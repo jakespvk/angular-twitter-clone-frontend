@@ -7,6 +7,8 @@
 </div>
 <div class="feed">
   <div class="feed-border">
-    <app-tweet *ngFor="let tweet of tweetList" [tweet]="tweet"></app-tweet>
+    @for (tweet of tweetList; track tweet) {
+      <app-tweet [tweet]="tweet"></app-tweet>
+    }
   </div>
 </div>
