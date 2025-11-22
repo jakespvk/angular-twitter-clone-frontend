@@ -3,6 +3,7 @@ import { Tweet } from '../tweet';
 import { RouterLink } from '@angular/router';
 
 @Component({
+  standalone: true,
   selector: 'app-tweet',
   imports: [RouterLink],
   template: `

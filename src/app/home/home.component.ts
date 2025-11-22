@@ -6,6 +6,7 @@ import { TweetComponent } from '../tweet/tweet.component';
 import { RouterLink } from '@angular/router';
 
 @Component({
+  standalone: true,
   selector: 'app-home',
   imports: [NgFor, TweetComponent, RouterLink],
   templateUrl: './home.component.html',
