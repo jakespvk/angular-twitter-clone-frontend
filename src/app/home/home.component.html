@@ -1,12 +1,14 @@
 <nav class="nav">
-  <a [routerLink]="['/post']">post tweet</a>
-  <a [routerLink]="['/search']">search</a>
+  <div class="title py-5 pl-1">
+    <h1 class="text-3xl">Birdy</h1>
+  </div>
+  <div>
+    <button class="mr-2" z-button zType="outline" [routerLink]="['/search']"><i z-icon zType="search"></i></button>
+    <button z-button zType="outline" [routerLink]="['/post']"><i z-icon zType="plus"></i></button> <!-- arrow up icon instead?? -->
+  </div>
 </nav>
-<div class="title">
-  <h1>Birdy</h1>
-</div>
 <div class="feed">
-  <div class="feed-border">
+  <div class="feed-border rounded border divide-y">
     @for (tweet of tweetList; track tweet) {
       <app-tweet [tweet]="tweet"></app-tweet>
     }

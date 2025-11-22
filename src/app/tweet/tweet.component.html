@@ -1,0 +1,8 @@
+<div class="flex flex-col space-y-1">
+  <a [routerLink]="['profile', tweet.username]">
+    <strong>{{ tweet.username }}</strong>
+  </a>
+  <a [routerLink]="['/details', tweet.id]">
+    <p>{{ tweet.message }}</p>
+  </a>
+</div>

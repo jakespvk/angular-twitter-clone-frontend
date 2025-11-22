@@ -6,16 +6,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   selector: 'app-tweet',
   imports: [RouterLink],
-  template: `
-    <div class="post-card">
-      <a [routerLink]="['profile', tweet.username]">
-        <h3>{{ tweet.username }}</h3>
-      </a>
-      <a [routerLink]="['/details', tweet.id]">
-        <p>{{ tweet.message }}</p>
-      </a>
-    </div>
-  `,
+  templateUrl: './tweet.component.html',
   styleUrl: './tweet.component.css'
 })
 export class TweetComponent {

@@ -1,3 +1,8 @@
-<a [routerLink]="['']">go back</a>
-<h2>{{ tweet?.username }}</h2>
-<p>{{ tweet?.message }}</p>
+<div class="w-1/2 mt-5 border rounded">
+  <div class="p-2">
+    <button class="mr-2" z-button zType="outline" [routerLink]="['']"><z-icon zType="arrow-left" /></button>
+    <strong>{{ tweet?.username }}</strong>
+  </div>
+  <p class="p-2">{{ tweet?.message }}</p>
+  <!-- do replies here -->
+</div>

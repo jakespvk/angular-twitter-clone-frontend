@@ -4,11 +4,13 @@ import { TweetsService } from '../tweets.service';
 
 import { TweetComponent } from '../tweet/tweet.component';
 import { RouterLink } from '@angular/router';
+import { ZardButtonComponent } from '@shared/components/button/button.component';
+import { ZardIconComponent } from '@shared/components/icon/icon.component';
 
 @Component({
   standalone: true,
   selector: 'app-home',
-  imports: [TweetComponent, RouterLink],
+  imports: [TweetComponent, RouterLink, ZardButtonComponent, ZardIconComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

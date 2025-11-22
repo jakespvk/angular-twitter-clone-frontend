@@ -1,7 +1,19 @@
-.title {
+:host {
+  width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.nav {
+  display: flex;
+  width: 50%;
+  align-items: center;
+}
+
+.title {
+  flex-grow: 1;
 }
 
 .feed {
@@ -16,19 +28,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid white;
-  border-radius: 5px;
-  padding: 0 2%;
 }
 
 .feed app-tweet {
   width: 100%;
-  padding: 0 2%;
-  border-bottom: 1px solid white;
+  padding: 10px 15px;
   overflow: hidden;
 }
 
-.nav {
-  display: flex;
-  justify-content: space-evenly;
+.nav-buttons {
+  justify-content: end;
 }

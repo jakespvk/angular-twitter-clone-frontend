@@ -4,10 +4,13 @@ import { TweetsService } from '../tweets.service';
 import { Tweet } from '../tweet';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { TweetComponent } from '../tweet/tweet.component';
+import { ZardIconComponent } from '@shared/components/icon/icon.component';
+import { ZardButtonComponent } from '@shared/components/button/button.component';
 
 @Component({
+  standalone: true,
   selector: 'app-profile',
-  imports: [RouterLink, TweetComponent],
+  imports: [RouterLink, TweetComponent, ZardIconComponent, ZardButtonComponent],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })

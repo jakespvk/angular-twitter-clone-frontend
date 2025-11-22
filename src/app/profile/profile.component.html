@@ -1,8 +1,14 @@
-<a [routerLink]="['']">go back</a>
-<h3>{{ username }}</h3>
-@for (tweet of userTweetList; track tweet) {
-  <app-tweet [tweet]="tweet">
-    <hr/>
-    <p>{{ tweet.message }}</p>
-  </app-tweet>
-}
+<div class="w-1/2 mt-5 border rounded divide-y">
+  <div class="p-2">
+    <button class="mr-3" z-button zType="outline" [routerLink]="['']"><z-icon zType="arrow-left" /></button>
+    <strong>{{ username }}</strong>
+  </div>
+  <div class="py-[10px] px-[15px]">
+  @for (tweet of userTweetList; track tweet) {
+    <app-tweet [tweet]="tweet">
+      <p>{{ tweet.message }}</p>
+    </app-tweet>
+  }
+  </div>
+  <!-- do replies here -->
+</div>

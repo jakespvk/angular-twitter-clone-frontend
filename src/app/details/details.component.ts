@@ -2,10 +2,13 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { TweetsService } from '../tweets.service';
 import { Tweet } from '../tweet';
+import { ZardIconComponent } from '@shared/components/icon/icon.component';
+import { ZardButtonComponent } from '@shared/components/button/button.component';
 
 @Component({
+  standalone: true,
   selector: 'app-details',
-  imports: [RouterLink],
+  imports: [RouterLink, ZardIconComponent, ZardButtonComponent],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css'
 })
