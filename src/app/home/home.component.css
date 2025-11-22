@@ -1,0 +1,34 @@
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feed {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feed-border {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 0 2%;
+}
+
+.feed app-tweet {
+  width: 100%;
+  padding: 0 2%;
+  border-bottom: 1px solid white;
+  overflow: hidden;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-evenly;
+}

@@ -8,7 +8,6 @@ import { RouterLink } from '@angular/router';
   imports: [RouterLink],
   template: `
     <div class="post-card">
-      <hr/>
       <a [routerLink]="['profile', tweet.username]">
         <h3>{{ tweet.username }}</h3>
       </a>
