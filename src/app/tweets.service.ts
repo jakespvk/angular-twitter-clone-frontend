@@ -6,25 +6,24 @@ import { environment } from '../environments/environment';
   providedIn: 'root'
 })
 export class TweetsService {
-  url = fetch(environment.apiUrl);
 
   async getAllTweets(): Promise<Tweet[]> {
-    const data = await fetch(`${this.url}/chats`);
+    const data = await fetch(`${environment.apiUrl}/chats`);
     return (await data.json()) ?? [];
   }
 
   async getTweetById(id: number): Promise<Tweet | undefined> {
-    const data = await fetch(`${this.url}/chat/${id}`);
+    const data = await fetch(`${environment.apiUrl}/chat/${id}`);
     return (await data.json()) ?? {};
   }
 
   async getUserTweets(username: string): Promise<Tweet[]> {
-    const data = await fetch(`${this.url}/chats/${username}`);
+    const data = await fetch(`${environment.apiUrl}/chats/${username}`);
     return (await data.json()) ?? [];
   }
 
   async postTweet(username: string, message: string) {
-    await fetch(`${this.url}/chat`, {
+    await fetch(`${environment.apiUrl}/chat`, {
       method: "POST",
       body: JSON.stringify({ "username": username, "message": message }),
     })
@@ -32,9 +31,10 @@ export class TweetsService {
   }
 
   async getFilteredTweets(keyword: string): Promise<Tweet[]> {
-    const data = await fetch(`${this.url}/chats/filter/${keyword}`);
+    const data = await fetch(`${environment.apiUrl}/chats/filter/${keyword}`);
     return (await data.json()) ?? [];
   }
 
-  constructor() { }
+  constructor() {
+  }
 }
