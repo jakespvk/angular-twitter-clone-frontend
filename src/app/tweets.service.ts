@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Tweet } from './tweet';
-import { FormControl } from '@angular/forms';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TweetsService {
-  url = "http://localhost:8080";
+  url = fetch(environment.apiUrl);
 
   async getAllTweets(): Promise<Tweet[]> {
     const data = await fetch(`${this.url}/chats`);
