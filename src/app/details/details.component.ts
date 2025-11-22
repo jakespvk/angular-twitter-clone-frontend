@@ -1,3 +1,4 @@
+// TODO make details component modular and accept data either 'profile' tweets or 'tweet and replies'
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { TweetsService } from '../tweets.service';
@@ -23,5 +24,4 @@ export class DetailsComponent {
       this.tweet = tweet;
     });
   }
-
 }
