@@ -9,26 +9,26 @@ export const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    title: 'Home page',
+    title: 'Birdy,',
   },
   {
     path: 'details/:id',
     component: DetailsComponent,
-    title: 'Home details',
+    title: 'Birdy, > Tweet Details',
   },
   {
     path: 'profile/:username',
     component: ProfileComponent,
-    title: 'Profile',
+    title: 'Birdy, > Profile',
   },
   {
     path: 'post',
     component: PostComponent,
-    title: 'Post',
+    title: 'Birdy, > Post',
   },
   {
     path: 'search',
     component: SearchComponent,
-    title: 'Search',
+    title: 'Birdy, > Search',
   },
 ];

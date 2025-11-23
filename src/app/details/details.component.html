@@ -4,5 +4,16 @@
     <strong>{{ tweet?.username }}</strong>
   </div>
   <p class="p-2">{{ tweet?.message }}</p>
-  <!-- do replies here -->
+  <div class="divide-y border-y-4">
+    @for (reply of replies; track reply) {
+      <div class="py-2.5 px-[15px]">
+        <app-reply [reply]="reply"></app-reply>
+      </div>
+    }
+  </div>
+  <div class="flex flex-col">
+    <form>
+      <input class="w-full grow py-2.5 px-[15px]" z-input zBorderless [formControl]="replyContent" (keydown.enter)="$event.preventDefault();sendReply();" placeholder="Reply..." />
+    </form>
+  </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, HostListener, inject, ListenerOptions } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { Tweet } from '../tweet';
 import { TweetsService } from '../tweets.service';
 
