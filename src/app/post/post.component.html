@@ -1,12 +1,16 @@
-<a [routerLink]="['']">go back</a>
-<form [formGroup]="postTweetForm" (submit)="$event.preventDefault();postTweet()">
-  <label for="username">Username</label>
-  <input id="username" type="text" formControlName="username" />
-
-  <br/>
-
-  <label for="message">Message</label>
-  <input id="message" type="text" formControlName="message" />
-
-  <button style="background-color:white;" type="submit">Post</button>
-</form>
+<div class="w-1/2 mt-5 border rounded divide-y">
+  <div class="p-2 flex items-start">
+    <button class="mr-3" z-button zType="outline" [routerLink]="['']"><z-icon zType="arrow-left" /></button>
+    <div class="grow">
+    <form [formGroup]="postTweetForm" (submit)="$event.preventDefault();postTweet()">
+      <div class="grow flex items-end">
+        <div class="w-full flex flex-col space-y-1">
+          <input class="p-2" formControlName="username" z-input zBorderless autofocus placeholder="Username..." />
+          <textarea class="grow resize-none p-2 field-sizing-content" rows="2" formControlName="message" z-input placeholder="What's on your mind?" (keydown.control.enter)="$event.preventDefault();postTweet()"></textarea>
+        </div>
+        <button class="ml-2" z-button zType="outline" zTooltip="Ctrl+Enter" type="submit"><z-icon zType="arrow-up" /></button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>

@@ -2,7 +2,7 @@
   <div class="p-2 flex items-center">
     <button class="mr-3" z-button zType="outline" [routerLink]="['']"><z-icon zType="arrow-left" /></button>
     <form>
-      <input #filter [autofocus] (onload)="setFocused(filter)" z-input zBorderless [formControl]="searchTerm" placeholder="Search..." /> <!-- TODO popover searchbar -->
+      <input class="grow" autofocus z-input zBorderless [formControl]="searchTerm" (keydown.enter)="$event.preventDefault();" placeholder="Search..." /> <!-- TODO popover searchbar -->
     </form>
   </div>
     @for (tweet of filteredTweetList; track tweet) {
