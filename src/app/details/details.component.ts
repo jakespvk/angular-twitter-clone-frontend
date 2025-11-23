@@ -8,11 +8,12 @@ import { ZardButtonComponent } from '@shared/components/button/button.component'
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Reply } from '../reply';
 import { ReplyComponent } from '../reply/reply.component';
+import { ZardTooltipModule } from '@shared/components/tooltip/tooltip';
 
 @Component({
   standalone: true,
   selector: 'app-details',
-  imports: [RouterLink, ReactiveFormsModule, ZardIconComponent, ZardButtonComponent, ReplyComponent],
+  imports: [RouterLink, ReactiveFormsModule, ZardIconComponent, ZardButtonComponent, ReplyComponent, ZardTooltipModule],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css'
 })

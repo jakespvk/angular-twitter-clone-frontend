@@ -12,8 +12,11 @@
     }
   </div>
   <div class="flex flex-col">
-    <form>
-      <input class="w-full grow py-2.5 px-[15px]" z-input zBorderless [formControl]="replyContent" (keydown.enter)="$event.preventDefault();sendReply();" placeholder="Reply..." />
-    </form>
+      <form>
+        <div class="grow flex flex-row items-center">
+          <textarea class="w-full py-2.5 px-[15px] field-sizing-content resize-none" rows="1" z-input zBorderless [formControl]="replyContent" (keydown.enter)="$event.preventDefault();sendReply();" placeholder="Reply..."></textarea>
+          <button class="m-2" z-button zType="outline" zTooltip="Enter" (click)="$event.preventDefault();sendReply();"><z-icon zType="arrow-up" /></button>
+        </div>
+      </form>
   </div>
 </div>
