@@ -3,7 +3,7 @@
     <button class="mr-3" z-button zType="outline" [routerLink]="['']"><z-icon zType="arrow-left" /></button>
     <strong>{{ username }}</strong>
   </div>
-  <div class="py-[10px] px-[15px]">
+  <div class="py-2.5 px-[15px]">
   @for (tweet of userTweetList; track tweet) {
     <app-tweet [tweet]="tweet">
       <p>{{ tweet.message }}</p>

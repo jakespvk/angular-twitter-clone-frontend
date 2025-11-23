@@ -1,7 +1,14 @@
-<a [routerLink]="['']">go back</a>
-<form (submit)="$event.preventDefault();filterResults(filter.value)">
-  <input type="text" placeholder="find tweet" #filter />
-</form>
-@for (tweet of filteredTweetList; track tweet) {
-  <app-tweet [tweet]="tweet"></app-tweet>
-}
+<div class="w-1/2 mt-5 border rounded divide-y">
+  <div class="p-2 flex items-center">
+    <button class="mr-3" z-button zType="outline" [routerLink]="['']"><z-icon zType="arrow-left" /></button>
+    <form>
+      <input #filter [autofocus] (onload)="setFocused(filter)" z-input zBorderless [formControl]="searchTerm" placeholder="Search..." /> <!-- TODO popover searchbar -->
+    </form>
+  </div>
+    @for (tweet of filteredTweetList; track tweet) {
+      <div class="py-2.5 px-[15px]">
+        <app-tweet [tweet]="tweet"></app-tweet>
+      </div>
+    }
+  <!-- do replies here -->
+</div>
